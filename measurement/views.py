@@ -68,6 +68,9 @@ class SensorView(RetrieveAPIView):
             measurement.pop('sensor', None)
             measurement.pop('id', None)
 
+            if not measurement.get('image'):
+                measurement.pop('image', None)
+
         sensor_data['measurements'] = measurement_data
 
         return Response(
