@@ -1,0 +1,41 @@
+@baseUrl = http://localhost:8000/api
+
+###
+
+POST {{baseUrl}}/sensors/
+Content-Type: application/json
+
+{
+  "name": "ESP32",
+  "description": "Датчик на кухне за холодильником"
+}
+
+###
+
+PATCH {{baseUrl}}/sensors/1/
+Content-Type: application/json
+
+{
+  "name": "ESP32",
+  "description": "Перенес датчик на балкон"
+}
+
+###
+
+POST {{baseUrl}}/measurements/
+Content-Type: application/json
+
+{
+  "sensor": 2,
+  "temperature": 22.7
+}
+
+###
+
+GET {{baseUrl}}/sensors/
+Content-Type: application/json
+
+###
+
+GET {{baseUrl}}/sensors/1/
+Content-Type: application/json
